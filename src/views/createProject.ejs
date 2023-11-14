@@ -3,15 +3,15 @@
     <form id="create-project-form" action="/create-project" method="post">
         <div>
             <label for="name">Project Name</label>
-            <input class="input-field" type="text" placeholder="Enter the Project Name" id="name" name="name" value="">
+            <input class="input-field" type="text" required placeholder="Enter the Project Name" id="name" name="name" value="">
         </div>
         <div>
             <label for="description">Project Description</label>
-            <textarea class="input-field" type="textarea" placeholder="Enter the Project Description" id="description" name="description" value=""></textarea>
+            <textarea class="input-field" type="textarea" required placeholder="Enter the Project Description" id="description" name="description" value=""></textarea>
         </div>
         <div>
             <label for="author">Author</label>
-            <input class="input-field" type="text" placeholder="Enter Author Name" id="author" name="author" value="">
+            <input class="input-field" type="text" required placeholder="Enter Author Name" id="author" name="author" value="">
         </div>
         <div >
             <button id="create-btn" type="submit">Create Project</button>

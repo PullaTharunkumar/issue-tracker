@@ -3,11 +3,11 @@
     <form id="create-project-form" action="/create-issue/<%= id %>" method="post">
         <div>
             <label for="name">Issue Title</label>
-            <input class="input-field" type="text" placeholder="Enter the Issue Title" id="name" name="title" value="">
+            <input class="input-field" type="text" placeholder="Enter the Issue Title" id="name" name="title" value="" required>
         </div>
         <div>
             <label for="description">Issue Description</label>
-            <textarea class="input-field" type="textarea" placeholder="Enter the Issue Description" id="description" name="description" value=""></textarea>
+            <textarea class="input-field" type="textarea" placeholder="Enter the Issue Description" id="description" required name="description" value=""></textarea>
         </div>
         <div>
             <label>Add Labels</label>
@@ -22,7 +22,7 @@
         </div>
         <div>
             <label for="author">Author</label>
-            <input class="input-field" type="text" placeholder="Enter Author Name" id="author" name="author" value="">
+            <input class="input-field" type="text" placeholder="Enter Author Name" required id="author" name="author" value="">
         </div>
         <div >
             <button id="create-btn" type="submit">Create Issue</button>
