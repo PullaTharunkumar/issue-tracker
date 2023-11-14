@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/home.css" >
+
+<div class="project-container">
+    <% for(project of projects){ %>
+        <div id="products-div">
+            <div>
+                <h2>
+                    Project Name : <%= project.name %>
+                </h2>
+                <h3>
+                    Author : <%= project.author %>
+                </h3>
+            </div>
+            <div class="right-div">
+                <a class="btn details-btn" href="/project-details/<%=project._id%>"> Details </a>
+            </div>
+        </div>
+        <% } %>
+</div>

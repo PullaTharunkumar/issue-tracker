@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/createProject.css">
+<div id="continer">
+    <form id="create-project-form" action="/create-issue/<%= id %>" method="post">
+        <div>
+            <label for="name">Issue Title</label>
+            <input class="input-field" type="text" placeholder="Enter the Issue Title" id="name" name="title" value="">
+        </div>
+        <div>
+            <label for="description">Issue Description</label>
+            <textarea class="input-field" type="textarea" placeholder="Enter the Issue Description" id="description" name="description" value=""></textarea>
+        </div>
+        <div>
+            <label>Add Labels</label>
+            <select name="label"  placeholder="select Label">
+                <option>Bug</option>
+                <option>Feature</option>
+                <option>Enhancement</option> 
+                <option>Critical</option> 
+                <option>Completed</option> 
+                <option>InProgress</option>
+            </select>
+        </div>
+        <div>
+            <label for="author">Author</label>
+            <input class="input-field" type="text" placeholder="Enter Author Name" id="author" name="author" value="">
+        </div>
+        <div >
+            <button id="create-btn" type="submit">Create Issue</button>
+        </div>
+    </form>
+</div>

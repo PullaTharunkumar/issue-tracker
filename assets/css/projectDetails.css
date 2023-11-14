@@ -1,0 +1,59 @@
+#project-details {
+  width: 70vw;
+  background-color: rgb(169, 239, 143);
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+#tot-proj-div {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+#issue-cart {
+  background-color: rgb(130, 206, 238);
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+#search  input{
+  height: 30px;
+  border-radius: 12px;
+}
+/* Styles for the popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10% auto;
+  /* Center the popup vertically */
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button styles */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,46 @@
+#continer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: large;
+}
+label{
+    display: block;
+    margin-top: 10px;
+}
+#create-project-form{
+    margin: 10px 0px;
+    border: 2px black solid;
+    width: 60vw;
+    border-radius: 15px;
+}
+.input-field{
+    width: 40vw;
+    height: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    font-size: large;
+    margin: 10px 0px;
+}
+#description    {
+    height: 250px;
+}
+select{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 25px;
+    border-color: blue;
+}
+#create-btn{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 25px;
+    background-color: green;
+    border-color: blue;
+}

@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="/css/projectDetails.css">
+
+
+<div id='tot-proj-div'>
+    <div id="project-details">
+        <a class="details-btn" href="/project-details/<%=project._id%>">Show All Issues</a>
+        <a class="details-btn" href="/create-issue/<%=project._id%>">create Issue</a>
+        <button class="details-btn" onclick="labelFilOpen()">Label Filter</button>
+        <div id="label-fil" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="labelFilClose()">&times;</span>
+                <h1>Filter Issues</h1>
+                <% if(issues?.length){ %>
+                    <form action="/labelFilter/<%=project._id%>" method="post">
+                        <input type="checkbox" id="bug" name="bug" value="Bug">
+                        <label for="bug"> Bug</label><br>
+                        <input type="checkbox" id="feature" name="feature" value="Feature">
+                        <label for="feature"> Feature </label><br>
+                        <input type="checkbox" id="enhancement" name="enhancement" value="Enhancement">
+                        <label for="enhancement"> Enhancement</label><br>
+                        <input type="checkbox" id="critical" name="critical" value="Critical">
+                        <label for="critical"> Critical</label><br>
+                        <input type="checkbox" id="inProgress" name="inProgress" value="InProgress">
+                        <label for="inProgress"> InProgress</label><br>
+                        <input type="checkbox" id="completed" name="completed" value="Completed">
+                        <label for="completed"> Completed</label><br><br>
+                        <input type="submit" value="submit" class="details-btn">
+                    </form>
+                <% }else{ %>
+                    <h1>Based on this Issues Not Found</h1>
+                <% } %>
+            </div>
+        </div>
+        <button class="details-btn" onclick="authorOpen()">Author Filter</button>
+        <div id="author" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="authorClose()">&times;</span>
+                <h1>Author Filter</h1>
+                <% if(issues?.length){ %>
+                    <form action="/authorFilter/<%=project._id%>" method="post" enctype="application/x-www-form-urlencoded">
+                        <% const eleDup = [] %> 
+                        <% for(let issue in issues){ %>
+                            <%const authorVal = issues[issue]?.author%>
+                            <%if(!eleDup.includes(authorVal)){ %>
+                                <input type="radio" id=<%=issue%> name = "author" value="<%- authorVal %>" >
+                                <label for=<%=issue%>> <%= authorVal %> </label><br>
+                                <% eleDup.push(authorVal) %>
+                            <%}%>
+                        <% } %>
+                        <br><input type="submit" value="submit" class="details-btn">
+                    </form>
+                <% }else{ %>
+                    <h1>Based on this Issues Not Found</h1>
+                <% } %>
+            </div>
+        </div>
+        <button class="details-btn" onclick="searchOpen()">Search</button>
+        <div id="search" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="searchClose()">&times;</span>
+                <h1>Search</h1>
+                <% if(issues?.length){ %>
+                    <form action="/search/<%=project._id%>" method="post">
+                        <label for='title'> Title  :</label>
+                        <input type="text" id='title' class="" name = "title" placeholder="Title " ><br><br>
+                        <label for='description'> Description : </label>
+                        <input type="text" id='description' name = "description" placeholder="Description " >
+                        <br><button type="submit" value="submit" class="details-btn">Submit</button>
+                    </form>
+                <% }else{ %>
+                    <h1>Issues Not Found</h1>
+                <% } %>
+            </div>
+        </div>
+        <h1>Project : <%= project.name %></h1>
+        <h3>Author : <%= project.author %></h3>
+        <div>
+            <h2>Project Description : </h2>
+            <div>
+                <%= project.description %>
+            </div>
+        </div>
+        <div>
+            <% if(issues?.length){ %>   
+                <% for(let issue of issues){ %>
+                    <div id="issue-cart">
+                        <h1>
+                            Title : <%= issue.title %>
+                        </h1>
+                        <h2>
+                            Label : <%= issue.label %>
+                        </h2>
+                        <h3>
+                            Author : <%= issue.author %>
+                        </h3>
+                        <div>
+                            <h3 class="inline">Issue Description : </h3>
+                            <span>
+                                <%= issue.description %>
+                            </span>
+                        </div>
+                    </div>
+                <% } %>
+            <% }else{ %>
+                <h3>Based on this Issuse Not Fount</h3>
+            <% } %>
+        </div>
+    </div>
+</div>
+<script src="/events/events.js"></script>
+
+
+
+
+
+

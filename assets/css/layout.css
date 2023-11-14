@@ -1,0 +1,29 @@
+body{
+    margin: 0px;
+}
+#header{
+    background-color: rgb(202, 43, 226);
+    display: flex;
+    justify-content: space-evenly
+}
+.btn{
+    font-size: large;
+    margin: auto 0px;
+}
+a{
+    text-decoration:none
+}
+.inline{
+    display:inline;
+}
+.details-btn{
+    background-color: royalblue;
+    border: 0px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: black;
+}
+.popup-content > form{
+    text-align: left;
+}

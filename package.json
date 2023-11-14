@@ -6,18 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PullaTharunkumar/issue-tracker.git"
-  },
   "author": "Tharunkumar",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PullaTharunkumar/issue-tracker/issues"
-  },
-  "homepage": "https://github.com/PullaTharunkumar/issue-tracker#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mongodb": "^6.2.0"
   },
   "type": "module"
 }
